@@ -1,17 +1,29 @@
 <script lang="ts">
 	import '../app.css';
-	import * as Menubar from "$lib/components/ui/menubar"
 	import * as Accordion from "$lib/components/ui/accordion/index.js";
 
 	let { children } = $props();
 </script>
 
-{@render children()}
 <Accordion.Root type="single" class='flex justify-center w-full'>
   <Accordion.Item value="item-1" class='flex justify-center w-full flex-wrap'>
-    <Accordion.Trigger class='w-full'>Is it accessible?</Accordion.Trigger>
-    <Accordion.Content class='w-full text-center'>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </Accordion.Content>
+    <Accordion.Trigger class='w-full'>
+		</Accordion.Trigger>
+		<a href="/" class='w-full text-center'>
+			<Accordion.Content>
+				Home
+			</Accordion.Content>
+		</a>
+		<a href="/portfolio" class='w-full text-center'>
+			<Accordion.Content>
+				Portfolio
+			</Accordion.Content>
+		</a>
+		<a href="/contact" class='w-full text-center'>
+			<Accordion.Content>
+				Contact
+			</Accordion.Content>
+		</a>
   </Accordion.Item>
 </Accordion.Root>
+{@render children()}
